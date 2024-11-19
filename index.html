@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Étudiant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Enregistrer un Étudiant</h2>
+        <form id="studentForm" onsubmit="return saveStudentInfo()">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required>
+
+            <label for="dateNaissance">Date de naissance :</label>
+            <input type="date" id="dateNaissance" name="dateNaissance" required>
+
+            <label for="dateInscription">Date d'inscription :</label>
+            <input type="date" id="dateInscription" name="dateInscription" required>
+
+            <label for="filiere">Filière :</label>
+            <select id="filiere" name="filiere" required>
+                <option value="">Sélectionnez une filière</option>
+                <option value="Développement informatique">Développement informatique</option>
+                <option value="Bureautique informatique">Bureautique informatique</option>
+                <option value="English Business Communication">English Business Communication</option>
+            </select>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telephone">Numéro de téléphone :</label>
+            <input type="tel" id="telephone" name="telephone" pattern="[0-9]{10}" required>
+
+            <label for="observation">Observations :</label>
+            <textarea id="observation" name="observation" rows="3" placeholder="Écrivez vos observations ici..."></textarea>
+
+            <button type="submit">Enregistrer</button>
+        </form>
+        <p id="message"></p>
+
+        <!-- Bouton d'exportation -->
+        <button id="exportButton" onclick="exportToExcel()">Exporter vers Excel</button>
+
+        <!-- Section Contact Formateur -->
+        <div class="contact-info">
+            <p>Formateur : Prof. Imad</p>
+            <p>Contact : 0660837285</p>
+        </div>
+    </div>
+
+    <!-- Bibliothèque SheetJS pour l'exportation Excel -->
+    <script src="https:/
